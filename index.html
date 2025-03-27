@@ -145,7 +145,7 @@
     <section class="contact" id="contact">
         <div class="container">
             <h2 class="section-title">Contact Me</h2>
-            <form id="contact-form" action="proses.php" method="POST">
+            <form id="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
                 <div class="form-group">
                     <input type="text" name="name" id="name" required>
                     <label for="name">Name</label>
@@ -160,19 +160,13 @@
                     <textarea name="message" id="message" rows="5" required></textarea>
                     <label for="message">Message</label>
                 </div>
-                
-                <div class="cf-turnstile" 
-             data-sitekey="0x4AAAAAABCuXX0_U6tdCi-5"
-             data-callback="onTurnstileSuccess"
-             data-error-callback="onTurnstileError"
-             data-expired-callback="onTurnstileExpired"></div>
         
         <button type="submit" id="submit-btn" disabled class="btn">
             <span>Send Message</span>
             <div class="loading-dots"></div>
         </button>
         
-        <p id="turnstile-error" class="error-message"></p>
+        <p class="form-status"></p>
             </form>
         </div>
     </section>
