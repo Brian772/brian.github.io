@@ -145,7 +145,7 @@
     <section class="contact" id="contact">
         <div class="container">
             <h2 class="section-title">Contact Me</h2>
-            <form id="contact-form" action="https://formspree.io/f/meoaljep" method="POST">
+            <form id="contact-form" action="proses.php" method="POST">
                 <div class="form-group">
                     <input type="text" name="name" id="name" required>
                     <label for="name">Name</label>
@@ -161,12 +161,18 @@
                     <label for="message">Message</label>
                 </div>
                 
-                <button type="submit" class="btn">
-                    <span class="btn-text">Send Message</span>
-                    <div class="loading-dots"></div>
-                </button>
-                
-                <p class="form-status"></p>
+                <div class="cf-turnstile" 
+             data-sitekey="0x4AAAAAABCuXX0_U6tdCi-5"
+             data-callback="onTurnstileSuccess"
+             data-error-callback="onTurnstileError"
+             data-expired-callback="onTurnstileExpired"></div>
+        
+        <button type="submit" id="submit-btn" disabled class="btn">
+            <span>Send Message</span>
+            <div class="loading-dots"></div>
+        </button>
+        
+        <p id="turnstile-error" class="error-message"></p>
             </form>
         </div>
     </section>
@@ -189,5 +195,6 @@
         <p>&copy; 2025 Brian Ardhisswara.</p>
     </footer>
     <script src="script.js"></script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </body>
 </html>
