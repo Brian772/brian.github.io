@@ -112,3 +112,55 @@ function showStatus(message, type) {
         status.style.display = 'none';
     }, 5000);
 }
+
+// Fungsi callback dari reCAPTCHA
+function enableSubmitBtn() {
+    document.getElementById('submit-btn').disabled = false;
+}
+
+function disableSubmitBtn() {
+    document.getElementById('submit-btn').disabled = true;
+}
+
+// Validasi sebelum submit
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const response = grecaptcha.getResponse();
+    if(response.length === 0) {
+        alert("Silakan verifikasi reCAPTCHA terlebih dahulu!");
+        return;
+    }
+    
+    // Lanjutkan proses pengiriman form
+    submitForm(response);
+});
+
+// Fungsi pengiriman form
+async function submitForm(captchaResponse) {
+    const formData = new FormData(document.getElementById('contact-form'));
+    formData.append('g-recaptcha-response', captchaResponse);
+    
+    try {
+        const response = await fetch('https://formspree.io/f/xwplnkow', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+        
+        if(response.ok) {
+            alert('Pesan terkirim!');
+            grecaptcha.reset(); // Reset reCAPTCHA
+            document.getElementById('contact-form').reset();
+        } else {
+            throw new Error('Gagal mengirim pesan');
+        }
+    } catch(error) {
+        console.error('Error:', error);
+        alert('Terjadi kesalahan, silakan coba lagi.');
+    } finally {
+        disableSubmitBtn();
+    }
+}
