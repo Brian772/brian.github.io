@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Brian Ardhisswara</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+        <!-- Tambahkan menu toggle untuk mobile -->
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars fa-2x"></i>
+        </div>
+    
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+                <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+                <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
+                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+            </ul>
+        </nav>
+
+
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Brian Ardhisswara</h1>
+            <p>Frontend Developer & UI Designer</p>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-image">
+                <img 
+                    src="placeholder-profile.jpg" 
+                    data-src="profile.jpg"
+                    alt="Brian Profile"
+                    loading="lazy"
+                    class="lazy"
+                    decoding="async"
+                    width="400"
+                    height="500"
+                >
+            </div>
+            
+            <div class="about-content">
+                <h2 class="section-title">About Me</h2>
+                <div class="bio">
+                    <p class="highlight">Frontend Engineer dengan 1 bulan pengalaman memmbangun antarmuka web yang intuisif dan responsif.</p>
+                    
+                    <div class="about-details">
+                        <ul>
+                            <li><i class="fas fa-graduation-cap"></i>SMPN 12 Malang</li>
+                             <li><i class="fas fa-briefcase"></i>Tidak ada</li>  <!-- isi dengan pengalaman kerja -->
+                            <li><i class="fas fa-trophy"></i>Tidak ada</li> <!-- isi dengan penghargaan -->
+                        </ul>
+                    </div>
+                    
+                    <div class="personal-info">
+                        <div class="info-item">
+                            <span class="label"><b>Email :</b></span>
+                            <span class="value">ardhisswara@gmail.comm</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label"><b>Lokasi :</b></span>
+                            <span class="value">Malang, Jawa Timur, Indonesia</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label"><b>Bahasa :</b></span>
+                            <span class="value">Indonesia, English</span>
+                        </div>
+                    </div>
+                    
+                    <a href="cv-john-doe.pdf" download class="download-cv">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects" id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+            <!-- Contoh project card dengan lazy loading -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img 
+                        src="images/placeholder/placeholder-small.webp" 
+                        data-src="images/project/project1-800webp"
+                        data-srcset="images/project/project1-400.webp 400w, images/project/project1-800.webp 800w"
+                        sizes="(max-width: 600px) 90vw, (max-width: 1200px) 50vw, 800px"
+                        alt="Sreenshot Dashboard Analytics" 
+                        loading="lazy"
+                        class="lazy"
+                        decoding="async"
+                        width="400"
+                        height="300"
+                    >
+                </div>
+                <div class="project-info">
+                    <h3>Website Portofolio</h3>
+                    <p>Website ini adalah project pertama saya yang dibuat dengan fremework sederhana.</p>
+                    <p><b>Bahasa Pemrograman : </b> HTML, CSS, JavaScript</p>
+                    <a href="#home" class="look-project">Lihat Project</a>
+                </div>
+            </div>
+            
+            <!-- Tambahkan project card lainnya dengan struktur yang sama -->
+        </div>
+    </section>
+
+    <section class="skills" id="skills">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-container">
+            <!-- Repeat this block for each skill -->
+            <div class="skill-item">
+                <i class="fab fa-html5 fa-3x"></i>
+                <h3>HTML5</h3>
+            </div>
+            <div class="skill-item">
+                <i class="fab fa-css3 fa-3x"></i>
+                <h3>CSS</h3>
+            </div>
+            <div class="skill-item">
+                <i class="fab fa-js fa-3x"></i>
+                <h3>JavaScript</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <form id="contact-form" action="https://formspree.io/f/meoaljep" method="POST">
+                <div class="form-group">
+                    <input type="text" name="name" id="name" required>
+                    <label for="name">Name</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" name="email" id="email" required>
+                    <label for="email">Email</label>
+                </div>
+                
+                <div class="form-group">
+                    <textarea name="message" id="message" rows="5" required></textarea>
+                    <label for="message">Message</label>
+                </div>
+                
+                <button type="submit" class="btn">
+                    <span class="btn-text">Send Message</span>
+                    <div class="loading-dots"></div>
+                </button>
+                
+                <p class="form-status"></p>
+            </form>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 2rem; background: #f8f9fa;">
+        <div class="social-links">
+            <a href="https://github.com/Brian772" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.instagram.com/ardhisswara/" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/@ardhisswara" target="_blank" aria-label="TikTok">
+                <i class="fab fa-tiktok"></i>
+            </a>
+        </div>
+        <p>&copy; 2025 Brian Ardhisswara.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
