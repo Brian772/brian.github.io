@@ -161,9 +161,13 @@
                     <label for="message">Message</label>
                 </div>
 
-                <button type="submit" class="btn">
-                    <span class="btn-text">Send Message</span>
-                    <div class="loading-dots"></div>
+                <div class="g-recaptcha" 
+                    data-sitekey="6LekygErAAAAAKaPWFF_KbpEwtK4ySXIw8Do_QJu" 
+                    data-callback="enableSubmitBtn"
+                    data-expired-callback="disableSubmitBtn"></div>
+        
+                <button type="submit" id="submit-btn" disabled class="btn">
+                    <span>Send Message</span>
                 </button>
         
                 <p class="form-status"></p>
@@ -189,5 +193,6 @@
         <p>&copy; 2025 Brian Ardhisswara.</p>
     </footer>
     <script src="script.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
 </html>
