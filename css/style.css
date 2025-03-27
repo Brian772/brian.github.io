@@ -656,3 +656,19 @@ body {
         font-size: 1rem;
     }
 }
+
+.cf-turnstile {
+    margin: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.error-message {
+    color: #ff4444;
+    margin-top: 1rem;
+    display: none;
+}
+
+[data-theme="dark"] .cf-turnstile iframe {
+    filter: invert(1) hue-rotate(180deg);
+}
