@@ -656,3 +656,14 @@ body {
         font-size: 1rem;
     }
 }
+
+.g-recaptcha {
+    margin: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+/* Style untuk dark mode */
+[data-theme="dark"] .g-recaptcha {
+    filter: invert(1) hue-rotate(180deg);
+}
