@@ -659,6 +659,7 @@ body {
 
 .g-recaptcha {
     margin: 1.5rem 0;
+    margin-bottom: 1.5rem;
     display: flex;
     justify-content: center;
 }
