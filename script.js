@@ -164,3 +164,46 @@ async function submitForm(captchaResponse) {
         disableSubmitBtn();
     }
 }
+
+// Fungsi untuk menampilkan popup
+function showCvPopup() {
+    const popup = document.getElementById('cvPopup');
+    popup.style.display = 'flex';
+    
+    // Tambahkan event listener untuk close
+    popup.querySelector('.close-btn').onclick = () => hideCvPopup();
+    popup.onclick = (e) => {
+        if(e.target === popup) hideCvPopup();
+    }
+
+    // Background click handler
+    popup.addEventListener('click', (e) => {
+        if(e.target === popup) hideCvPopup();
+    });
+    
+    // Tambahkan keyboard handler
+    document.addEventListener('keydown', (e) => {
+        if(e.key === 'Escape') hideCvPopup();
+    });
+}
+
+// Fungsi untuk menyembunyikan popup
+function hideCvPopup() {
+    const popup = document.getElementById('cvPopup');
+    popup.style.display = 'none';
+    
+    // Hapus event listeners
+    document.removeEventListener('keydown', hideCvPopup);
+}
+
+// Update tombol download CV
+document.querySelector('.download-cv').addEventListener('click', (e) => {
+    e.preventDefault();
+    showCvPopup();
+});
+
+document.body.addEventListener('click', (e) => {
+    if(e.target.classList.contains('close-btn')) {
+        hideCvPopup();
+    }
+});
