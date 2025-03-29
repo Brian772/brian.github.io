@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Brian Ardhisswara</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
         <!-- Tambahkan menu toggle untuk mobile -->
@@ -37,7 +36,7 @@
     <section class="hero" id="home">
         <div class="hero-content">
             <h1>Brian Ardhisswara</h1>
-            <p>Frontend Engineer & UI Designer</p>
+            <p>Frontend Developer & UI Designer</p>
         </div>
     </section>
 
@@ -114,8 +113,31 @@
                 <div class="project-info">
                     <h3>Website Portofolio</h3>
                     <p>Website ini adalah project pertama saya yang dibuat dengan fremework sederhana.</p>
-                    <p><b>Bahasa Pemrograman : </b> HTML, CSS, Javascript, php</p>
+                    <p><b>Bahasa Pemrograman : </b> HTML, CSS, JavaScript, php</p>
                     <a href="#home" class="look-project">Lihat Project</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img 
+                        src="images/placeholder/placeholder-small1.webp" 
+                        data-src="images/project/project2-800webp"
+                        data-srcset="images/project/project2-400.webp 400w, images/project/project2-800.webp 800w"
+                        sizes="(max-width: 600px) 90vw, (max-width: 1200px) 50vw, 800px"
+                        alt="Sreenshot Dashboard Analytics" 
+                        loading="lazy"
+                        class="lazy"
+                        decoding="async"
+                        width="400"
+                        height="300"
+                    >
+                </div>
+                <div class="project-info">
+                    <h3>Website SkillSwap</h3>
+                    <p>Website ini adalah project kedua saya yang sedang dalam pengerjaaan dan website ini dibuat dengan fremework sederhana.</p>
+                    <p><b>Bahasa Pemrograman : </b> HTML, CSS, JavaScript</p>
+                    <a href="http://127.0.0.1:3002/index.html" class="look-project">Lihat Project</a>
                 </div>
             </div>
             
@@ -133,7 +155,7 @@
             </div>
             <div class="skill-item">
                 <i class="fab fa-css3 fa-3x"></i>
-                <h3>CSS3</h3>
+                <h3>CSS</h3>
             </div>
             <div class="skill-item">
                 <i class="fab fa-js fa-3x"></i>
@@ -144,7 +166,7 @@
 
     <section class="contact" id="contact">
         <div class="container">
-            <h2 class="section-title">Contact</h2>
+            <h2 class="section-title">Contact Me</h2>
             <form id="contact-form" action="https://formspree.io/f/xwplnkow" method="POST">
                 <div class="form-group">
                     <input type="text" name="name" id="name" required>
